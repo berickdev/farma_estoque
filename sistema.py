@@ -8,7 +8,7 @@ def menu_principal(page:ft.Page, usuario):
         tela_produtos(page, usuario)
 
     def ir_estoque(e):
-        tela_produtos(page, usuario)
+        tela_estoque(page, usuario)
 
     def logout(e):
         page.window.close()
@@ -48,7 +48,7 @@ def tela_produtos(page: ft.Page, usuario):
         produtos = db.listar_produtos()
         for p in produtos:
             btn_del=ft.IconButton(
-                icon=ft.Icon.DELETE,
+                icon=ft.Icons.DELETE,
                 icon_color="red",
                 data=p[0],
                 on_click=deletar_item
